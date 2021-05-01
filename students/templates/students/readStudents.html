@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Read Students</h1>
+
+    {% if student_list %}
+    <ol>
+        {% for s in student_list %}
+        <li>
+            <a href="">{{ s.s_name }} </a><br>
+            <a href="">modify</a>
+            <a href="">delete</a>
+        </li>
+        {% endfor %}
+    </ol>
+    {% endif %}
+    <br>
+    <a href="{% url 'students:reg' %}"> 신규회원가입</a>
+</body>
+</html>
