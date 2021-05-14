@@ -42,11 +42,11 @@ def modConStudent(request):
     grade = request.POST['grade']
     gender = request.POST['gender']
 
-    qs = Student.objects.get(sname = name)
-    qs.sname = name
-    qs.major = major
-    qs.age = age
-    qs.grade = grade
-    qs.gender = gender
+    qs = Student.objects.get(s_name = name)
+    qs.s_name = name
+    qs.s_major = major
+    qs.s_age = age
+    qs.s_grade = grade
+    qs.s_gender = gender
     qs.save()
     return HttpResponseRedirect(reverse('students:stuAll'))
