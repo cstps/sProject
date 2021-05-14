@@ -20,7 +20,7 @@
     </br>
 
     <a href="{% url 'students:stuMod' student_info.s_name %}">수정</a>
-    <a href="#node">del</a>
+    <a href="{% url 'students:stuDel' student_info.s_name %}">del</a>
     <a href="{% url 'students:stuAll' %}">student list</a>
     <a href="{% url 'students:reg' %}">new add </a>
 

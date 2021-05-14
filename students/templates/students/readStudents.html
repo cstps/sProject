@@ -15,7 +15,7 @@
         <li>
             <a href="{% url 'students:stuDet' s.s_name %}">{{ s.s_name }} </a><br>
             <a href="{% url 'students:stuMod' s.s_name %}">modify</a>
-            <a href="#none">delete</a>
+            <a href="{% url 'students:stuDel' s.s_name %}">delete</a>
         </li>
         {% endfor %}
     </ol>

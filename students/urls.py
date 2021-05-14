@@ -10,6 +10,8 @@ urlpatterns = [
    path('<str:name>/det/',views.detStudent, name = 'stuDet'),
    path('<str:name>/mod/',views.reaStudentOne, name = 'stuMod'),
    path('modCon/',views.modConStudent, name = 'modCon'),
+   path('<str:name>/del/',views.delConStudent, name = 'stuDel'),
+   
   
 ]
   
