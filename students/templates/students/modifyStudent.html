@@ -10,7 +10,7 @@
    <h1>Modify Students</h1>
 
     {% if student_info %}
-        <form action="{% url 'students:stuDet' %}" method="post">
+        <form action="{% url 'students:modCon' %}" method="post">
             {% csrf_token %}
             name : {{student_info.s_name}} <br>
             <input type="hidden" name="name" value ={{student_info.s_name}} id=""><br>
