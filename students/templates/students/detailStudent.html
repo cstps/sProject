@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Detail Students </p>
+    {% if student_info %}
+        name : {{student_info.s_name}} </br>
+        major : {{student_info.s_major}} </br>
+        age : {{student_info.s_age}} </br>
+        grade : {{student_info.s_grade}} </br>
+        gender : {{student_info.s_gender}} </br>
+    {% else %}
+        <p>student : 0 </p>
+    {% endif %}
+    </br>
+
+    <a href="{% url 'students:stuMod' student_info.s_name %}">수정</a>
+    <a href="#node">del</a>
+    <a href="{% url 'students:stuAll' %}">student list</a>
+    <a href="{% url 'students:reg' %}">new add </a>
+
+</body>
+</html>

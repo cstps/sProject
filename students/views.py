@@ -24,3 +24,29 @@ def reaStudentAll(request):
     qs = Student.objects.all()
     context = {'student_list':qs}
     return render(request, 'students/readStudents.html',context)
+
+def detStudent(request, name):
+    qs = Student.objects.get(s_name = name)
+    context = {'student_info' : qs}
+    return render(request, 'students/detailStudent.html',context)
+
+def reaStudentOne(request,name):
+    qs = Student.objects.get(s_name = name)
+    context = {'student_info' : qs}
+    return render(request, 'students/modifyStudent.html',context)
+
+def modConStudent(request):
+    name = request.POST['name']
+    major = request.POST['major']
+    age = request.POST['age']
+    grade = request.POST['grade']
+    gender = request.POST['gender']
+
+    qs = Student.objects.get(sname = name)
+    qs.sname = name
+    qs.major = major
+    qs.age = age
+    qs.grade = grade
+    qs.gender = gender
+    qs.save()
+    return HttpResponseRedirect(reverse('students:stuAll'))
