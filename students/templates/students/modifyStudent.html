@@ -12,6 +12,7 @@
     {% if student_info %}
         <form action="{% url 'students:modCon' %}" method="post">
             {% csrf_token %}
+            id :  {{student_info.id}} <br>
             name : {{student_info.s_name}} <br>
             <input type="hidden" name="name" value ={{student_info.s_name}} id=""><br>
             major :  <input type="text" name="major" value ={{student_info.s_major}} id=""><br>
